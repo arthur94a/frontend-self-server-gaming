@@ -1,0 +1,16 @@
+.button {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.green_light {
+    background: linear-gradient(125deg, $green-400, $blue-200);
+    color: $black-400;
+
+    &:hover {
+        background: $green-400;
+    }
+}
