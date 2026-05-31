@@ -1,0 +1,16 @@
+.section {
+    width: 100%;
+
+    @include mixin.desktop {
+        max-width: 1440px;
+        padding: 0 32px;
+    }
+
+    @include mixin.tablet {
+        padding: 0 24px;
+    }
+
+    @include mixin.mobile {
+        padding: 0 16px;
+    }
+}
