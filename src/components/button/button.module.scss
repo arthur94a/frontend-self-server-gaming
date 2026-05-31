@@ -7,7 +7,7 @@
 }
 
 .green_light {
-    background: linear-gradient(125deg, $green-400, $blue-200);
+    background: $green-blue-gradiente;
     color: $black-400;
 
     &:hover {

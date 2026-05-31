@@ -1,0 +1,28 @@
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+
+.logo_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    padding: 4px;
+    background: $green-400;
+    color: black;
+}
+
+.logo_title {
+    display: inline-block;
+    text-transform: uppercase;
+    background: $green-blue-gradiente;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
