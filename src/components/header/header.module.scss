@@ -42,3 +42,19 @@
         list-style: none;
     }
 }
+
+.nav_item {
+    &:hover {
+        color: $green-400;
+        transform: scale(1.08);
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+.active {
+    color: $green-400;
+}
+
+.disabled {
+    color: $gray-300;
+}

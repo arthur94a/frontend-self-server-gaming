@@ -22,14 +22,41 @@ export function Header() {
 
                 <nav className={styles.nav}>
                     <ul>
-                        <li>
-                            <NavLink to="/">Home</NavLink>
+                        <li className={styles.nav_item}>
+                            <NavLink
+                                to="/"
+                                className={({ isActive }) => {
+                                    return isActive
+                                        ? styles.active
+                                        : styles.disabled
+                                }}
+                            >
+                                Home
+                            </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/services">Serviços</NavLink>
+                        <li className={styles.nav_item}>
+                            <NavLink
+                                to="/services"
+                                className={({ isActive }) => {
+                                    return isActive
+                                        ? styles.active
+                                        : styles.disabled
+                                }}
+                            >
+                                Serviços
+                            </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/prices">Preços</NavLink>
+                        <li className={styles.nav_item}>
+                            <NavLink
+                                to="/prices"
+                                className={({ isActive }) => {
+                                    return isActive
+                                        ? styles.active
+                                        : styles.disabled
+                                }}
+                            >
+                                Preços
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
