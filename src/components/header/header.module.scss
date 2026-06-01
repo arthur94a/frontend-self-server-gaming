@@ -33,3 +33,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.nav {
+    ul {
+        display: flex;
+        gap: 32px;
+        padding: 0;
+        list-style: none;
+    }
+}

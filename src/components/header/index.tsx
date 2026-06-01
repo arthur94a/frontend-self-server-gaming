@@ -1,6 +1,7 @@
-import { Button } from '../button'
-import { GiAngelWings } from 'react-icons/gi'
 import { Section } from '../section'
+import { Button } from '../button'
+import { NavLink } from 'react-router'
+import { GiAngelWings } from 'react-icons/gi'
 
 import styles from './header.module.scss'
 
@@ -19,13 +20,20 @@ export function Header() {
                     <span className={styles.logo_title}>Ícaro Services</span>
                 </div>
 
-                <nav>
+                <nav className={styles.nav}>
                     <ul>
-                        <li>Home</li>
-                        <li>Serviços</li>
-                        <li>Preços</li>
+                        <li>
+                            <NavLink to="/">Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/services">Serviços</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/prices">Preços</NavLink>
+                        </li>
                     </ul>
                 </nav>
+
                 <Button>Começar</Button>
             </header>
         </Section>
