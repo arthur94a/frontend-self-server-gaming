@@ -1,5 +1,5 @@
-import { Section } from '../section'
-import { Button } from '../button'
+import { Section } from '@components/section'
+import { Button } from '@components/button'
 import { NavLink } from 'react-router'
 import { GiAngelWings } from 'react-icons/gi'
 

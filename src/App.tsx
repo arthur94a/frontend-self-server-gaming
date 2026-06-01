@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
-import { Home } from './pages/Home'
+import { Home } from './pages/home/Home'
 import { Services } from './pages/Services'
 import { Prices } from './pages/Prices'
 import { NotFound } from './pages/NotFound'
