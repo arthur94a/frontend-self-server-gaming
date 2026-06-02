@@ -1,0 +1,10 @@
+.flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    outline: 1px solid $blue-900;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: $gray-300;
+}

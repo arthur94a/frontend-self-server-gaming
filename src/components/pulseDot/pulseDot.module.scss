@@ -1,0 +1,21 @@
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 4px 4px var($green-400);
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 1px #121212;
+    }
+}
+
+.dot {
+    display: inline-block;
+    border: 2px solid $black-400;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $green-400;
+    animation: 2s ease-in-out infinite pulse;
+}
