@@ -35,3 +35,22 @@ a {
     color: inherit;
     cursor: pointer;
 }
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}

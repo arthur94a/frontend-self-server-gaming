@@ -1,0 +1,17 @@
+.subtitle {
+    color: $gray-300;
+}
+
+.level_ {
+    &1 {
+        font-size: 1.25rem;
+    }
+
+    &2 {
+        font-size: 1rem;
+    }
+
+    &3 {
+        font-size: 0.875rem;
+    }
+}

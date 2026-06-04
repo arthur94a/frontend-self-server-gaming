@@ -2,7 +2,6 @@
     width: 100%;
 
     @include mixin.desktop {
-        max-width: 1440px;
         padding: 0 32px;
     }
 
@@ -13,4 +12,29 @@
     @include mixin.mobile {
         padding: 0 16px;
     }
+}
+
+.inner_section {
+    width: 100%;
+    margin: 0 auto;
+
+    @include mixin.desktop {
+        max-width: 1440px;
+    }
+
+    @include mixin.tablet {
+        max-width: 1199px;
+        padding: 0 24px;
+    }
+
+    @include mixin.mobile {
+        max-width: 768px;
+        padding: 0 16px;
+    }
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
