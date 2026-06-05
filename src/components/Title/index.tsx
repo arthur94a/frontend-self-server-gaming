@@ -11,15 +11,17 @@ export function Title({
 }: {
     as?: React.ElementType
     firstPhrase: string
-    secondPhrase: string
+    secondPhrase?: string
     lineBreak?: boolean
     className?: string
 }) {
     return (
         <Component className={clsx(styles.title, className)}>
             <span className={styles.white}>{firstPhrase}</span>
-            {lineBreak ? <br /> : ''}
-            <span className={styles.colored}>{secondPhrase}</span>
+            {lineBreak && secondPhrase ? <br /> : ''}
+            {secondPhrase && (
+                <span className={styles.colored}>{secondPhrase}</span>
+            )}
         </Component>
     )
 }

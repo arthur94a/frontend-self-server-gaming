@@ -1,0 +1,33 @@
+.advantages_container {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 8px;
+    outline: 1px solid $blue-900;
+    background: $bg-blue-gradiente;
+
+    &:hover {
+        outline-color: $green-400;
+    }
+}
+
+.card_title {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    color: $white;
+}
+
+.card_description {
+    font-size: 1rem;
+    color: $gray-300;
+}
