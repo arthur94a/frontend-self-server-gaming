@@ -1,4 +1,5 @@
 .banner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,4 +11,23 @@
     border-radius: 8px;
     background: $black-400;
     outline: 1px solid $blue-900;
+
+    & > * {
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background-image: url('/src/assets/pexels-pramodtiwari-13931014.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(0.3);
+        z-index: 0;
+    }
 }
