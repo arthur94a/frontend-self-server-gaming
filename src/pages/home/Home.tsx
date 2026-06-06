@@ -1,3 +1,4 @@
+import { BannerSection } from './components/bannerSection'
 import { Hero } from './components/hero'
 import { ProductAdvantages } from './components/productAdvantages'
 
@@ -6,6 +7,7 @@ export function Home() {
         <main>
             <Hero />
             <ProductAdvantages />
+            <BannerSection />
         </main>
     )
 }
