@@ -1,0 +1,13 @@
+.section {
+    border-top: 1px solid $blue-900;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+
+    span {
+        color: $gray-300;
+    }
+}
