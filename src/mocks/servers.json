@@ -1,0 +1,85 @@
+{
+    "servers": [
+        {
+            "id": 1,
+            "name": "Minecraft",
+            "gameType": "Sandbox",
+            "isOnline": true,
+            "isPopular": true,
+            "maxPlayers": 500,
+            "speed": 6
+        },
+        {
+            "id": 2,
+            "name": "Rust",
+            "gameType": "Survival",
+            "isOnline": true,
+            "isPopular": true,
+            "maxPlayers": 300,
+            "speed": 9
+        },
+        {
+            "id": 3,
+            "name": "ARK: Survival",
+            "gameType": "Survival",
+            "isOnline": true,
+            "isPopular": false,
+            "maxPlayers": 100,
+            "speed": 11
+        },
+        {
+            "id": 4,
+            "name": "Counter-Strike 2",
+            "gameType": "FPS",
+            "isOnline": true,
+            "isPopular": true,
+            "maxPlayers": 64,
+            "speed": 5
+        },
+        {
+            "id": 5,
+            "name": "Valheim",
+            "gameType": "Survival",
+            "isOnline": true,
+            "isPopular": true,
+            "maxPlayers": 10,
+            "speed": 8
+        },
+        {
+            "id": 6,
+            "name": "Garry's Mod",
+            "gameType": "Sandbox",
+            "isOnline": true,
+            "isPopular": false,
+            "maxPlayers": 128,
+            "speed": 7
+        },
+        {
+            "id": 7,
+            "name": "Palworld",
+            "gameType": "Open World",
+            "isOnline": true,
+            "isPopular": false,
+            "maxPlayers": 32,
+            "speed": 10
+        },
+        {
+            "id": 8,
+            "name": "Terraria",
+            "gameType": "2D Sandbox",
+            "isOnline": true,
+            "isPopular": false,
+            "maxPlayers": 16,
+            "speed": 6
+        },
+        {
+            "id": 9,
+            "name": "DayZ",
+            "gameType": "Survival",
+            "isOnline": true,
+            "isPopular": false,
+            "maxPlayers": 60,
+            "speed": 12
+        }
+    ]
+}
