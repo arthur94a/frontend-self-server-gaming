@@ -1,7 +1,17 @@
+.section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid $blue-900;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    background: $black-400;
+    opacity: 0.9;
 }
 
 .logo {

@@ -7,7 +7,7 @@ import styles from './header.module.scss'
 
 export function Header() {
     return (
-        <Section>
+        <Section className={styles.section}>
             <header className={styles.header}>
                 <div className={styles.logo}>
                     <i className={styles.logo_icon}>
