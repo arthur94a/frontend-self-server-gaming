@@ -16,6 +16,10 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: $green-400;
+    background-color: red;
     animation: 2s ease-in-out infinite pulse;
+}
+
+.online {
+    background-color: $green-400;
 }

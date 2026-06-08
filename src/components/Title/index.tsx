@@ -8,17 +8,19 @@ export function Title({
     secondPhrase,
     lineBreak = false,
     className,
+    align = 'center'
 }: {
     as?: React.ElementType
     firstPhrase: string
     secondPhrase?: string
     lineBreak?: boolean
     className?: string
+    align?: 'left' | 'center' | 'right'
 }) {
     return (
-        <Component className={clsx(styles.title, className)}>
+        <Component className={clsx(styles.title, styles[align], className)}>
             <span className={styles.white}>{firstPhrase}</span>
-            {lineBreak && secondPhrase ? <br /> : ''}
+            {lineBreak && secondPhrase ? <br /> : ' '}
             {secondPhrase && (
                 <span className={styles.colored}>{secondPhrase}</span>
             )}

@@ -36,7 +36,7 @@ export function Header() {
                         </li>
                         <li className={styles.nav_item}>
                             <NavLink
-                                to="/services"
+                                to="/servers"
                                 className={({ isActive }) => {
                                     return isActive
                                         ? styles.active
