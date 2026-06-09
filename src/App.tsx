@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { Home } from './pages/home'
 import { Services } from './pages/services'
-import { Prices } from './pages/Prices'
+import { Prices } from './pages/prices'
 import { NotFound } from './pages/NotFound'
 import { DefaultLayout } from './layout/DefaultLayout'
 
