@@ -1,60 +1,125 @@
 .card {
+    --card-padding: 24px;
+
     position: relative;
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: var(--card-padding);
     border-radius: 8px;
     outline: 1px solid $blue-900;
     overflow: hidden;
+
+    &:hover {
+        outline: 1px solid $green-400;
+
+        .circle {
+            --circle-transparent: 70%;
+            --circle-opacity: 0.2;
+        }
+    }
 }
 
 .circle {
+    --circle-transparent: 60%;
+    --circle-opacity: 0.1;
+
     position: absolute;
     top: -75px;
     right: -75px;
     width: 200px;
     height: 200px;
-    background: radial-gradient($blue-900 0%, transparent 70%);
+    background: radial-gradient(
+        $blue-900 0%,
+        transparent var(--circle-transparent)
+    );
     background-repeat: no-repeat;
 
     &.color_ {
         &sandbox {
             background: radial-gradient(
-                rgba(255, 0, 0, 0.1) 0%,
-                transparent 70%
+                rgba(255, 0, 0, var(--circle-opacity)) 0%,
+                transparent var(--circle-transparent)
             );
         }
 
         &fps {
             background: radial-gradient(
-                rgba(0, 128, 0, 0.1) 0%,
-                transparent 70%
+                rgba(0, 128, 0, var(--circle-opacity)) 0%,
+                transparent var(--circle-transparent)
             );
         }
 
         &open_world {
             background: radial-gradient(
-                rgba(255, 255, 0, 0.1) 0%,
-                transparent 70%
+                rgba(255, 255, 0, var(--circle-opacity)) 0%,
+                transparent var(--circle-transparent)
             );
         }
 
         &survival {
             background: radial-gradient(
-                rgba(0, 0, 255, 0.1) 0%,
-                transparent 70%
+                rgba(0, 0, 255, var(--circle-opacity)) 0%,
+                transparent var(--circle-transparent)
             );
         }
 
         &2d_sandbox {
             background: radial-gradient(
-                rgba(128, 0, 128, 0.1) 0%,
-                transparent 70%
+                rgba(128, 0, 128, var(--circle-opacity)) 0%,
+                transparent var(--circle-transparent)
             );
         }
     }
+}
+
+.flag_pop {
+    position: absolute;
+    top: var(--card-padding);
+    right: var(--card-padding);
+    padding: 2px 4px;
+    border-radius: 8px;
+    outline: 1px solid $green-400;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: $green-400;
+}
+
+.title {
+    font-size: 1.25rem;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.main {
+    display: flex;
+    gap: 24px;
+}
+
+.info {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 0.875rem;
+    color: $gray-300;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid $blue-900;
 }
 
 .status_container {
     display: flex;
     align-items: center;
     gap: 4px;
+    font-size: 0.875rem;
+    color: $gray-300;
 }

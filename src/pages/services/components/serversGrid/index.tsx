@@ -10,9 +10,14 @@ export function ServersGrid() {
     return (
         <Section center={true} className={styles.section}>
             <div className={styles.grid}>
-                {api.servers.map((server) => (
-                    <ServerCard key={server.id} {...(server as GameServer)} />
-                ))}
+                {api.servers.map((server) => {
+                    return (
+                        <ServerCard
+                            key={server.id}
+                            {...(server as GameServer)}
+                        />
+                    )
+                })}
             </div>
         </Section>
     )

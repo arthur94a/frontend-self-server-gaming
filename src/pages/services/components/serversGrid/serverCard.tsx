@@ -1,11 +1,14 @@
 import { Subtitle } from '@/components/Subtitle'
 import { Title } from '@/components/Title'
+import { PulseDot } from '@/components/pulseDot'
+import { Button } from '@/components/button'
+import { IoPeople } from 'react-icons/io5'
+import { FaSignal } from 'react-icons/fa6'
 import clsx from 'clsx'
 
 import styles from './serverCard.module.scss'
 
 import type { GameServer } from '@/types/servers'
-import { PulseDot } from '@/components/pulseDot'
 
 export function ServerCard({
     name,
@@ -26,24 +29,35 @@ export function ServerCard({
             ></span>
 
             <header>
-                <Title as={'h2'} firstPhrase={name} />
-                <Subtitle level={2} text={gameType} />
+                <Title as={'h2'} firstPhrase={name} className={styles.title} />
+                <Subtitle
+                    level={2}
+                    text={gameType}
+                    className={styles.subtitle}
+                />
 
-                {isPopular && <span>Popular</span>}
+                {isPopular && <span className={styles.flag_pop}>Popular</span>}
             </header>
 
-            <body>
-                <div>1-{maxPlayers} players</div>
-                <div>{speed} ms</div>
-            </body>
+            <main className={styles.main}>
+                <div className={styles.info}>
+                    <IoPeople fill="#9c9c9c" /> 1-{maxPlayers} players
+                </div>
 
-            <footer>
+                <div className={styles.info}>
+                    <FaSignal fill="#02f77b" /> {speed} ms
+                </div>
+            </main>
+
+            <footer className={styles.footer}>
                 <div className={styles.status_container}>
                     <PulseDot online={isOnline} />
                     {status}
                 </div>
 
-                <button>configurar</button>
+                <Button theme="green_ghost" size="small">
+                    configurar
+                </Button>
             </footer>
         </article>
     )

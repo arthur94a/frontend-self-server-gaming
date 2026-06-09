@@ -6,12 +6,22 @@
     font-weight: 600;
 }
 
+// THEME -------------------------------------
 .green_light {
     background: $green-blue-gradiente;
     color: $black-400;
 
     &:hover {
         background: $green-400;
+    }
+}
+
+.green_ghost {
+    color: $green-400;
+    background: transparent;
+
+    &:hover {
+        color: $blue-200;
     }
 }
 
@@ -23,4 +33,17 @@
     &:hover {
         background: $blue-900;
     }
+}
+
+// SIZE ----------------------------------------
+.big {
+    font-size: 1.25rem;
+}
+
+.normal {
+    font-size: 1rem;
+}
+
+.small {
+    font-size: 0.875rem;
 }
