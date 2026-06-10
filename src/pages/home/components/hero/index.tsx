@@ -17,6 +17,7 @@ export function Hero() {
                 firstPhrase="Servidores de jogos"
                 secondPhrase="construídos para vencer"
                 lineBreak={true}
+                align="center"
                 className={styles.title}
             />
 
