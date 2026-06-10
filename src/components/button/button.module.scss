@@ -35,6 +35,16 @@
     }
 }
 
+.dark_blue {
+    color: $white;
+    background: $blue-900;
+    outline: $blue-950;
+
+    &:hover {
+        background: $blue-800;
+    }
+}
+
 // SIZE ----------------------------------------
 .big {
     font-size: 1.25rem;

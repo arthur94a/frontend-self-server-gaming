@@ -5,12 +5,14 @@ import { Title } from '@/components/Title'
 import { PriceCard } from './priceCard'
 import api from '@mocks/plans.json'
 
+import styles from './priceSection.module.scss'
+
 import type { Plan } from '@/types/prices'
 
 export function PriceSection() {
     return (
-        <Section center={true}>
-            <div>
+        <Section center={true} className={styles.section}>
+            <div className={styles.hero}>
                 <Suptitle text="Planos" />
 
                 <Title
@@ -26,7 +28,7 @@ export function PriceSection() {
                 />
             </div>
 
-            <div>
+            <div className={styles.plans_container}>
                 {api.plans.map((plan) => {
                     return <PriceCard key={plan.name} data={plan as Plan} />
                 })}
