@@ -1,0 +1,44 @@
+{
+    "plans": [
+        {
+            "name": "starter",
+            "description": "Para começar a jogar com amigos.",
+            "price": 19,
+            "features": [
+                "2 GB RAM dedicada",
+                "20 GB NVMe",
+                "Até 10 jogadores",
+                "1 vCore @ 4.5GHz",
+                "Proteção DDoS"
+            ]
+        },
+        {
+            "name": "pro",
+            "description": "Performance para comunidades ativas.",
+            "price": 49,
+            "features": [
+                "6 GB RAM dedicada",
+                "60 GB NVMe",
+                "Até 50 jogadores",
+                "2 vCore @ 4.8GHz",
+                "Proteção DDoS Pro",
+                "Backups diários",
+                "Mods ilimitados"
+            ]
+        },
+        {
+            "name": "elite",
+            "description": "Hardware top de linha sem limites.",
+            "price": 119,
+            "features": [
+                "16 GB RAM dedicada",
+                "150 GB NVMe",
+                "Jogadores ilimitados",
+                "4 vCore @ 5.2GHz",
+                "DDoS Enterprise",
+                "Backups por hora",
+                "Suporte prioritário 24/7"
+            ]
+        }
+    ]
+}

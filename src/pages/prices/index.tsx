@@ -1,10 +1,12 @@
 import { Faq } from '@/components/faq'
-import { faqList } from './faqList'
+import { faqList } from './components/faqList'
+import { PriceSection } from './components/priceSection'
 
 export function Prices() {
     return (
         <main>
-            Página de preços <Faq details={faqList} />
+            <PriceSection />
+            <Faq details={faqList} />
         </main>
     )
 }
