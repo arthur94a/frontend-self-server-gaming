@@ -12,7 +12,9 @@ export function Banner() {
                 level={2}
                 text="Crie seu servidor agora e ganhe 7 dias de garantia para testar tudo."
             />
-            <Button theme="green_light">Escolher plano</Button>
+            <Button type="link" url="/prices" theme="green_light">
+                Escolher plano
+            </Button>
         </div>
     )
 }

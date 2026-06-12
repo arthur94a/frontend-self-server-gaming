@@ -31,7 +31,7 @@ export function Header() {
                                         : styles.disabled
                                 }}
                             >
-                                Home
+                                Início
                             </NavLink>
                         </li>
                         <li className={styles.nav_item}>
@@ -61,7 +61,9 @@ export function Header() {
                     </ul>
                 </nav>
 
-                <Button>Começar</Button>
+                <Button type="link" url="/prices" theme="green_light">
+                    Começar
+                </Button>
             </header>
         </Section>
     )
