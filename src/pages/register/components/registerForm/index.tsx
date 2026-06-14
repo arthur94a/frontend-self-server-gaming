@@ -1,20 +1,20 @@
 import { useState } from 'react'
-import { useParams } from 'react-router'
+import { useSearchParams } from 'react-router'
 import { Button } from '@/components/button'
 
 import styles from './registerForm.module.scss'
 
 export function RegisterForm() {
+    const [searchParams] = useSearchParams()
+    const planParam = searchParams.get('plan')
+
     const initialValues = {
         name: '',
         email: '',
-        plans: '',
+        plans: planParam || '',
         password: '',
         confirmPassword: '',
     }
-
-    const params = useParams()
-    console.log(params)
 
     const [values, setValues] = useState(initialValues)
 
