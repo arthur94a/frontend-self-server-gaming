@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams } from 'react-router'
 import { Button } from '@/components/button'
 
 import styles from './registerForm.module.scss'
@@ -11,6 +12,9 @@ export function RegisterForm() {
         password: '',
         confirmPassword: '',
     }
+
+    const params = useParams()
+    console.log(params)
 
     const [values, setValues] = useState(initialValues)
 
@@ -67,7 +71,7 @@ export function RegisterForm() {
                             setValues({ ...values, plans: e.target.value })
                         }
                     >
-                        <option value="" disabled selected>
+                        <option value="" disabled>
                             Selecione um plano
                         </option>
                         <option value="starter">Starter</option>

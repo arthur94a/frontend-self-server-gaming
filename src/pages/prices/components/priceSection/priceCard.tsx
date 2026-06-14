@@ -40,8 +40,10 @@ export function PriceCard({ data }: PriceCardProps) {
                 </div>
 
                 <Button
+                    type="link"
                     theme={favoritePlan ? 'green_light' : 'dark_blue'}
                     className={styles.button}
+                    url={`/register?plan=${data.name}`}
                 >
                     {ctaLabel()}
                 </Button>
