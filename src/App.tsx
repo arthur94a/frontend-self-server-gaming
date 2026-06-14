@@ -4,6 +4,7 @@ import { Services } from './pages/services'
 import { Prices } from './pages/prices'
 import { NotFound } from './pages/NotFound'
 import { DefaultLayout } from './layout/DefaultLayout'
+import { Register } from './pages/register'
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="servers" element={<Services />} />
                     <Route path="prices" element={<Prices />} />
+                    <Route path="register" element={<Register />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
