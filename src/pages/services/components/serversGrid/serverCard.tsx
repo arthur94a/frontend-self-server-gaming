@@ -10,6 +10,10 @@ import styles from './serverCard.module.scss'
 
 import type { GameServer } from '@/types/servers'
 
+interface ServerCardProps extends GameServer {
+    typeView: 'grid' | 'list'
+}
+
 export function ServerCard({
     name,
     gameType,
@@ -17,18 +21,19 @@ export function ServerCard({
     isPopular,
     maxPlayers,
     speed,
-}: GameServer) {
+    typeView = 'grid',
+}: ServerCardProps) {
     const status = isOnline ? 'Online' : 'Offline'
     const normalizeGameType =
         'color_' + gameType.toLowerCase().replace(' ', '_')
 
     return (
-        <article className={styles.card}>
+        <article className={clsx(styles.card, styles[typeView])}>
             <span
                 className={clsx(styles.circle, styles[normalizeGameType])}
             ></span>
 
-            <header>
+            <header className={styles.header}>
                 <Title as={'h2'} firstPhrase={name} className={styles.title} />
                 <Subtitle
                     level={2}
@@ -55,7 +60,7 @@ export function ServerCard({
                     {status}
                 </div>
 
-                <Button theme="green_ghost" size="small">
+                <Button type="button" theme="green_ghost" size="small">
                     configurar
                 </Button>
             </footer>

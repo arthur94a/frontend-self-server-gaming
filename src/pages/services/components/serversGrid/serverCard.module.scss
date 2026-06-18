@@ -123,3 +123,56 @@
     font-size: 0.875rem;
     color: $gray-300;
 }
+
+/*************
+* LIST VIEW
+**************/
+
+.card.list {
+    --card-padding: 8px;
+
+    flex-direction: row;
+    width: 100%;
+    padding: 8px 100px 8px 24px;
+    display: flex;
+    align-items: center;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .flag_pop {
+        transform: translate(-24px, 50%);
+    }
+
+    .main {
+        flex: 1;
+    }
+
+    .info {
+        flex: 1;
+        max-width: 102px;
+    }
+
+    .title {
+        flex-basis: 40%;
+        text-align: left;
+    }
+
+    .subtitle {
+        flex-basis: 30%;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .footer {
+        padding-top: 0;
+        border: none;
+        flex: 1;
+        max-width: fit-content;
+    }
+}
