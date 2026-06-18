@@ -1,11 +1,17 @@
 import { Section } from '@components/section'
 import { Button } from '@components/button'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import { GiAngelWings } from 'react-icons/gi'
 
 import styles from './header.module.scss'
 
 export function Header() {
+    const location = useLocation()
+    const isPricePage = location?.pathname == '/prices'
+    const isRegisterPage = location?.pathname == '/register'
+
+    console.log('##location', location)
+
     return (
         <Section className={styles.section}>
             <header className={styles.header}>
@@ -61,8 +67,13 @@ export function Header() {
                     </ul>
                 </nav>
 
-                <Button type="link" url="/prices" theme="green_light">
-                    Começar
+                <Button
+                    type="link"
+                    url={isPricePage ? '/register' : '/prices'}
+                    theme="green_light"
+                    className={styles.button}
+                >
+                    {isRegisterPage ? 'Planos' : 'Começar'}
                 </Button>
             </header>
         </Section>
