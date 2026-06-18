@@ -18,6 +18,7 @@ export function FirstSection() {
             />
             <Subtitle
                 level={1}
+                align="left"
                 text="Mais de 40 jogos pré-configurados, com deploy em menos de um minuto."
             />
         </Section>
