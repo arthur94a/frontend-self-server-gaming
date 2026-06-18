@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import { Home } from './pages/home'
 import { Services } from './pages/services'
 import { Prices } from './pages/prices'
-import { NotFound } from './pages/NotFound'
+import { NotFound } from './pages/notFound'
 import { DefaultLayout } from './layout/DefaultLayout'
 import { Register } from './pages/register'
 

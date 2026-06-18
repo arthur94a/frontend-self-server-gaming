@@ -1,6 +1,18 @@
 .subtitle {
     margin-top: 16px;
     color: $gray-300;
+
+    &.center {
+        text-align: center;
+    }
+
+    &.left {
+        text-align: left;
+    }
+
+    &.right {
+        text-align: right;
+    }
 }
 
 .level_ {

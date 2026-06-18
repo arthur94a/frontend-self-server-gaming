@@ -1,0 +1,20 @@
+.main {
+    $header-height: 80px;
+    $footer-height: 100px;
+
+    min-height: calc(100vh - $header-height - $header-height);
+}
+
+.inner_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px;
+}
+
+.illustration {
+    width: 100%;
+    max-width: 400px;
+}
