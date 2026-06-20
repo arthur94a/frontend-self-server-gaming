@@ -1,0 +1,103 @@
+.success_message_container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+.success_message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: linear-gradient(
+        125deg,
+        rgba(2, 247, 123, 0.1),
+        rgba(1, 230, 235, 0.05)
+    );
+    border: 1px solid $green-400;
+    border-radius: 8px;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    animation: slideOut 0.3s ease forwards;
+    animation-delay: 15s;
+
+    &.closing {
+        animation: slideOut 0.3s ease forwards;
+    }
+}
+
+.success_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: $green-400;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    svg {
+        width: 14px;
+        height: 14px;
+        color: #08141b;
+    }
+}
+
+.success_content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.success_title {
+    color: $green-400;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.success_message_text {
+    color: $gray-300;
+    font-size: 12px;
+}
+
+.close_button {
+    background: none;
+    border: none;
+    color: $green-400;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &:hover {
+        color: $blue-200;
+    }
+}

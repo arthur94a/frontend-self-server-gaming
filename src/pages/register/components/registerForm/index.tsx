@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router'
 import { Button } from '@/components/button'
+import { SuccessMessage } from '@/components/successMessage'
 import { simulateUserRegister } from '@helper/simulateUserRegister'
 import { registerFormSchema } from './validation'
 import { ValidationError } from 'yup'
@@ -47,6 +48,7 @@ export function RegisterForm() {
     const [errors, setErrors] = useState<FormErrors>({})
     const [isLoading, setIsLoading] = useState(false)
     const [buttonLabel, setButtonLabel] = useState('Cadastrar')
+    const [showSuccess, setShowSuccess] = useState(false)
 
     function resetForm() {
         setIsLoading(false)
@@ -74,7 +76,7 @@ export function RegisterForm() {
                 },
             })
             console.log(result)
-            alert('Cadastro realizado com sucesso!')
+            setShowSuccess(true)
             setValues(initialValues)
         } catch (error: unknown) {
             if (error instanceof ValidationError) {
@@ -221,6 +223,15 @@ export function RegisterForm() {
                     {buttonLabel}
                 </Button>
             </form>
+
+            {showSuccess && (
+                <SuccessMessage
+                    title="Cadastro realizado!"
+                    message="Sua conta foi criada com sucesso. Bem-vindo!"
+                    onClose={() => setShowSuccess(false)}
+                    duration={15000}
+                />
+            )}
         </div>
     )
 }
