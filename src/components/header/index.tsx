@@ -10,8 +10,6 @@ export function Header() {
     const isPricePage = location?.pathname == '/prices'
     const isRegisterPage = location?.pathname == '/register'
 
-    console.log('##location', location)
-
     return (
         <Section className={styles.section}>
             <header className={styles.header}>
