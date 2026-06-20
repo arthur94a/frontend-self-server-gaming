@@ -36,12 +36,18 @@ export function RegisterForm() {
     const [isLoading, setIsLoading] = useState(false)
     const [buttonLabel, setButtonLabel] = useState('Cadastrar')
 
+    function resetForm() {
+        setIsLoading(false)
+        setButtonLabel('Cadastrar')
+    }
+
     async function handleSubmit() {
         setIsLoading(true)
         setButtonLabel('Carregando...')
 
         if (!isValidPlan(values.plan)) {
             alert('Por favor, selecione um plano válido')
+            resetForm()
             return
         }
 
@@ -57,8 +63,7 @@ export function RegisterForm() {
             console.log('Houve um erro, tente novamente em instantes.')
         }
 
-        setIsLoading(false)
-        setButtonLabel('Cadastrar')
+        resetForm()
     }
 
     return (
