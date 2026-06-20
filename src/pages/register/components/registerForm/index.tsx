@@ -33,20 +33,32 @@ export function RegisterForm() {
     }
 
     const [values, setValues] = useState<FormValues>(initialValues)
+    const [isLoading, setIsLoading] = useState(false)
+    const [buttonLabel, setButtonLabel] = useState('Cadastrar')
 
     async function handleSubmit() {
+        setIsLoading(true)
+        setButtonLabel('Carregando...')
+
         if (!isValidPlan(values.plan)) {
             alert('Por favor, selecione um plano válido')
             return
         }
 
-        const result = await simulateUserRegister({
-            user: {
-                ...values,
-                plan: values.plan,
-            },
-        })
-        console.log(result)
+        try {
+            const result = await simulateUserRegister({
+                user: {
+                    ...values,
+                    plan: values.plan,
+                },
+            })
+            console.log(result)
+        } catch {
+            console.log('Houve um erro, tente novamente em instantes.')
+        }
+
+        setIsLoading(false)
+        setButtonLabel('Cadastrar')
     }
 
     return (
@@ -146,8 +158,9 @@ export function RegisterForm() {
                     type="button"
                     theme="green_light"
                     onClick={handleSubmit}
+                    disabled={isLoading}
                 >
-                    Cadastrar
+                    {buttonLabel}
                 </Button>
             </form>
         </div>

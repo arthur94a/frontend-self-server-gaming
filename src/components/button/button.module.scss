@@ -4,6 +4,13 @@
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
+
+    &:disabled,
+    &:disabled:hover {
+        background: $gray-300;
+        color: $black-400;
+        cursor: wait;
+    }
 }
 
 // THEME -------------------------------------

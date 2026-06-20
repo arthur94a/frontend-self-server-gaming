@@ -8,6 +8,7 @@ interface ButtonProps {
     type: 'button' | 'link' | 'external_link'
     theme?: 'green_light' | 'green_ghost' | 'dark' | 'dark_blue'
     size?: 'big' | 'normal' | 'small'
+    disabled?: boolean
     className?: string
     url?: string
     onClick?: () => void
@@ -18,6 +19,7 @@ export function Button({
     type = 'button',
     theme = 'green_light',
     size = 'normal',
+    disabled,
     className,
     url = '/',
     onClick,
@@ -65,6 +67,7 @@ export function Button({
                         e.preventDefault()
                         onClick?.()
                     }}
+                    disabled={disabled}
                 >
                     {children}
                 </button>
