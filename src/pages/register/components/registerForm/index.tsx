@@ -7,6 +7,7 @@ import { ValidationError } from 'yup'
 
 import styles from './registerForm.module.scss'
 import type { Plan } from '@/types/prices'
+import { ErrorLabel } from './errorLabel'
 
 const VALID_PLANS: Plan['name'][] = ['starter', 'pro', 'elite']
 
@@ -22,7 +23,7 @@ interface FormValues {
     confirmPassword: string
 }
 
-interface FormErrors {
+export interface FormErrors {
     name?: string
     email?: string
     plan?: string
@@ -98,11 +99,8 @@ export function RegisterForm() {
         <div className={styles.form_container}>
             <form className={styles.form}>
                 <div className={styles.input_wrapper}>
-                    {errors.name && (
-                        <span className={styles.error}>{errors.name}</span>
-                    )}
                     <label className={styles.label} htmlFor="name">
-                        Nome:
+                        Nome: <ErrorLabel errors={errors} input="name" />
                     </label>
                     <input
                         id="name"
@@ -121,11 +119,8 @@ export function RegisterForm() {
                 </div>
 
                 <div className={styles.input_wrapper}>
-                    {errors.email && (
-                        <span className={styles.error}>{errors.email}</span>
-                    )}
                     <label className={styles.label} htmlFor="email">
-                        Email:
+                        Email: <ErrorLabel errors={errors} input="email" />
                     </label>
                     <input
                         id="email"
@@ -145,11 +140,8 @@ export function RegisterForm() {
                 </div>
 
                 <div className={styles.input_wrapper}>
-                    {errors.plan && (
-                        <span className={styles.error}>{errors.plan}</span>
-                    )}
                     <label className={styles.label} htmlFor="plans">
-                        Plano:
+                        Plano: <ErrorLabel errors={errors} input="plan" />
                     </label>
                     <select
                         id="plans"
@@ -174,11 +166,8 @@ export function RegisterForm() {
                 </div>
 
                 <div className={styles.input_wrapper}>
-                    {errors.password && (
-                        <span className={styles.error}>{errors.password}</span>
-                    )}
                     <label className={styles.label} htmlFor="password">
-                        Senha:
+                        Senha: <ErrorLabel errors={errors} input="password" />
                     </label>
                     <input
                         id="password"
@@ -197,13 +186,9 @@ export function RegisterForm() {
                 </div>
 
                 <div className={styles.input_wrapper}>
-                    {errors.confirmPassword && (
-                        <span className={styles.error}>
-                            {errors.confirmPassword}
-                        </span>
-                    )}
                     <label className={styles.label} htmlFor="confirmPassword">
-                        Confirmar senha:
+                        Confirmar senha:{' '}
+                        <ErrorLabel errors={errors} input="confirmPassword" />
                     </label>
                     <input
                         id="confirmPassword"
