@@ -58,7 +58,6 @@ export function RegisterForm() {
         setErrors({})
 
         try {
-            // Valida com Yup
             await registerFormSchema.validate(values, { abortEarly: false })
 
             if (!isValidPlan(values.plan)) {

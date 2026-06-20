@@ -19,7 +19,7 @@
 }
 
 .error {
-    color: #ff4444;
+    color: $error;
     font-size: 12px;
     margin-bottom: 4px;
 }
@@ -39,7 +39,7 @@
     }
 
     &.input_error {
-        outline: 1px solid #ff4444;
+        outline: 1px solid $error;
         background: rgba(255, 68, 68, 0.1);
     }
 }
