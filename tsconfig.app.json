@@ -25,7 +25,8 @@
             "@/*": ["src/*"],
             "@components/*": ["src/components/*"],
             "@assets/*": ["src/assets/*"],
-            "@mocks/*": ["src/mocks/*"]
+            "@mocks/*": ["src/mocks/*"],
+            "@helper/*": ["src/helpers/*"]
         }
     },
     "include": ["src"]

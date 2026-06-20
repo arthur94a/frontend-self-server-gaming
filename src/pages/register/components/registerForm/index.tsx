@@ -1,25 +1,52 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router'
 import { Button } from '@/components/button'
+import { simulateUserRegister } from '@helper/simulateUserRegister'
 
 import styles from './registerForm.module.scss'
+import type { Plan } from '@/types/prices'
+
+const VALID_PLANS: Plan['name'][] = ['starter', 'pro', 'elite']
+
+function isValidPlan(plan: string): plan is Plan['name'] {
+    return VALID_PLANS.includes(plan as Plan['name'])
+}
+
+interface FormValues {
+    name: string
+    email: string
+    plan: string
+    password: string
+    confirmPassword: string
+}
 
 export function RegisterForm() {
     const [searchParams] = useSearchParams()
     const planParam = searchParams.get('plan')
 
-    const initialValues = {
+    const initialValues: FormValues = {
         name: '',
         email: '',
-        plans: planParam || '',
+        plan: (isValidPlan(planParam || '') ? planParam : '') || '',
         password: '',
         confirmPassword: '',
     }
 
-    const [values, setValues] = useState(initialValues)
+    const [values, setValues] = useState<FormValues>(initialValues)
 
-    function handleSubmit() {
-        console.log(values)
+    async function handleSubmit() {
+        if (!isValidPlan(values.plan)) {
+            alert('Por favor, selecione um plano válido')
+            return
+        }
+
+        const result = await simulateUserRegister({
+            user: {
+                ...values,
+                plan: values.plan,
+            },
+        })
+        console.log(result)
     }
 
     return (
@@ -65,10 +92,10 @@ export function RegisterForm() {
                     <select
                         id="plans"
                         name="plans"
-                        value={values.plans}
+                        value={values.plan}
                         className={styles.input}
                         onChange={(e) =>
-                            setValues({ ...values, plans: e.target.value })
+                            setValues({ ...values, plan: e.target.value })
                         }
                     >
                         <option value="" disabled>
