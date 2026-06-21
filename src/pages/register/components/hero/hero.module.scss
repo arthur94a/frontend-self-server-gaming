@@ -1,4 +1,12 @@
 .hero_container {
     width: 100%;
     max-width: 480px;
+
+    @include mixin.tablet {
+        max-width: 100%;
+    }
+
+    @include mixin.mobile {
+        max-width: 100%;
+    }
 }

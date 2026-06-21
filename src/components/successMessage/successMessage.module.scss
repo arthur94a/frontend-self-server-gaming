@@ -4,6 +4,17 @@
     right: 20px;
     z-index: 9999;
     animation: slideIn 0.3s ease-out;
+
+    @include mixin.tablet {
+        top: 16px;
+        right: 16px;
+    }
+
+    @include mixin.mobile {
+        top: 12px;
+        right: 12px;
+        left: 12px;
+    }
 }
 
 @keyframes slideIn {
@@ -44,6 +55,19 @@
     backdrop-filter: blur(10px);
     animation: slideOut 0.3s ease forwards;
     animation-delay: 15s;
+
+    @include mixin.tablet {
+        max-width: 350px;
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    @include mixin.mobile {
+        max-width: 100%;
+        padding: 12px 14px;
+        gap: 8px;
+        font-size: 0.875rem;
+    }
 
     &.closing {
         animation: slideOut 0.3s ease forwards;

@@ -2,6 +2,18 @@
     display: flex;
     gap: 24px;
     margin-top: 24px;
+
+    @include mixin.tablet {
+        gap: 16px;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    @include mixin.mobile {
+        gap: 12px;
+        margin-top: 16px;
+        flex-direction: column;
+    }
 }
 
 .card {
@@ -15,6 +27,17 @@
     outline: 1px solid $blue-900;
     background: $bg-blue-gradiente;
 
+    @include mixin.tablet {
+        gap: 16px;
+        padding: 20px;
+    }
+
+    @include mixin.mobile {
+        gap: 12px;
+        padding: 16px;
+        display: flex;
+    }
+
     &:hover {
         outline-color: $green-400;
     }
@@ -26,9 +49,25 @@
     font-weight: 600;
     text-align: left;
     color: $white;
+
+    @include mixin.tablet {
+        font-size: 1.1rem;
+    }
+
+    @include mixin.mobile {
+        font-size: 1rem;
+    }
 }
 
 .card_description {
     font-size: 1rem;
     color: $gray-300;
+
+    @include mixin.tablet {
+        font-size: 0.95rem;
+    }
+
+    @include mixin.mobile {
+        font-size: 0.875rem;
+    }
 }

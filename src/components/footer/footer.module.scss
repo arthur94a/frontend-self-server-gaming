@@ -5,9 +5,25 @@
 .footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 32px;
+
+    @include mixin.tablet {
+        padding: 24px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    @include mixin.mobile {
+        padding: 16px;
+    }
 
     span {
         color: $gray-300;
+
+        @include mixin.mobile {
+            font-size: 0.875rem;
+        }
     }
 }

@@ -1,4 +1,15 @@
 .title {
+    font-size: 3rem;
+    font-weight: 700;
+
+    @include mixin.tablet {
+        font-size: 2.5rem;
+    }
+
+    @include mixin.mobile {
+        font-size: 1.75rem;
+    }
+
     &.center {
         text-align: center;
     }

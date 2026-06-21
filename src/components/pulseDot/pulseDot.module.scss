@@ -18,6 +18,12 @@
     border-radius: 50%;
     background-color: red;
     animation: 2s ease-in-out infinite pulse;
+
+    @include mixin.mobile {
+        width: 10px;
+        height: 10px;
+        border: 1.5px solid $black-400;
+    }
 }
 
 .online {

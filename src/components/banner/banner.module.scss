@@ -12,6 +12,17 @@
     background: $black-400;
     outline: 1px solid $blue-900;
 
+    @include mixin.tablet {
+        gap: 16px;
+        padding: 20px;
+    }
+
+    @include mixin.mobile {
+        gap: 12px;
+        padding: 16px;
+        max-width: 100%;
+    }
+
     & > * {
         z-index: 1;
     }

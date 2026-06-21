@@ -1,5 +1,13 @@
 .section {
     padding-bottom: 80px;
+
+    @include mixin.tablet {
+        padding-bottom: 60px;
+    }
+
+    @include mixin.mobile {
+        padding-bottom: 40px;
+    }
 }
 
 .grid {
@@ -9,6 +17,16 @@
     align-items: center;
     width: 100%;
     gap: 24px;
+
+    @include mixin.tablet {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    @include mixin.mobile {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 }
 
 .list {
@@ -24,6 +42,11 @@
     justify-content: center;
     padding: 24px 0;
     margin-left: auto;
+
+    @include mixin.mobile {
+        display: none;
+        padding: 16px 0;
+    }
 }
 
 .switch_view_button {
@@ -37,6 +60,11 @@
     border: none;
     outline: 1px solid $blue-900;
     background: transparent;
+
+    @include mixin.mobile {
+        width: 36px;
+        height: 36px;
+    }
 
     & + & {
         margin-left: 8px;

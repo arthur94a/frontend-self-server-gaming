@@ -1,9 +1,28 @@
 .main {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    @include mixin.tablet {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include mixin.mobile {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 .inner_section {
     display: flex;
     gap: 24px;
+
+    @include mixin.tablet {
+        gap: 20px;
+    }
+
+    @include mixin.mobile {
+        flex-direction: column;
+        gap: 24px;
+    }
 }

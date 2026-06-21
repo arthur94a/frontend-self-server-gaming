@@ -2,6 +2,14 @@
     margin-top: 16px;
     color: $gray-300;
 
+    @include mixin.tablet {
+        margin-top: 12px;
+    }
+
+    @include mixin.mobile {
+        margin-top: 8px;
+    }
+
     &.center {
         text-align: center;
     }
@@ -18,13 +26,29 @@
 .level_ {
     &1 {
         font-size: 1.25rem;
+
+        @include mixin.tablet {
+            font-size: 1.1rem;
+        }
+
+        @include mixin.mobile {
+            font-size: 1rem;
+        }
     }
 
     &2 {
         font-size: 1rem;
+
+        @include mixin.mobile {
+            font-size: 0.9rem;
+        }
     }
 
     &3 {
         font-size: 0.875rem;
+
+        @include mixin.mobile {
+            font-size: 0.8rem;
+        }
     }
 }

@@ -1,10 +1,26 @@
 .section {
     padding-bottom: 80px;
+
+    @include mixin.tablet {
+        padding-bottom: 60px;
+    }
+
+    @include mixin.mobile {
+        padding-bottom: 40px;
+    }
 }
 
 .title {
     font-size: 2rem;
     font-weight: 600;
+
+    @include mixin.tablet {
+        font-size: 1.75rem;
+    }
+
+    @include mixin.mobile {
+        font-size: 1.5rem;
+    }
 }
 
 .faq_container {
@@ -14,6 +30,17 @@
     width: 100%;
     max-width: 780px;
     margin-top: 24px;
+
+    @include mixin.tablet {
+        gap: 12px;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    @include mixin.mobile {
+        gap: 8px;
+        margin-top: 16px;
+    }
 }
 
 .faq_box {
@@ -23,16 +50,33 @@
     outline: 1px solid $blue-900;
     background: $bg-blue-gradiente;
     cursor: pointer;
+
+    @include mixin.tablet {
+        padding: 20px;
+    }
+
+    @include mixin.mobile {
+        padding: 16px;
+    }
 }
 
 .faq_summary {
     display: flex;
     justify-content: space-between;
     list-style: none;
+
+    @include mixin.mobile {
+        font-size: 0.95rem;
+    }
 }
 
 .icon_plus {
     transition: rotate 0.2s ease;
+    flex-shrink: 0;
+
+    @include mixin.mobile {
+        font-size: 1.2rem;
+    }
 
     &.rotate {
         rotate: 45deg;
@@ -42,10 +86,18 @@
 
 .faq_description {
     overflow: hidden;
+
+    @include mixin.mobile {
+        font-size: 0.9rem;
+    }
 }
 
 .faq_box[open] {
     .faq_description {
         margin-top: 8px;
+
+        @include mixin.mobile {
+            margin-top: 6px;
+        }
     }
 }

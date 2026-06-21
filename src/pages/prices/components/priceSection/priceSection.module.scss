@@ -1,13 +1,41 @@
 .section {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    @include mixin.tablet {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include mixin.mobile {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 .hero {
     padding-bottom: 40px;
+
+    @include mixin.tablet {
+        padding-bottom: 24px;
+    }
+
+    @include mixin.mobile {
+        padding-bottom: 16px;
+    }
 }
 
 .plans_container {
     display: flex;
     gap: 24px;
+
+    @include mixin.tablet {
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    @include mixin.mobile {
+        gap: 12px;
+        flex-direction: column;
+    }
 }
