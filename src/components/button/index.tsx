@@ -5,7 +5,7 @@ import styles from './button.module.scss'
 
 interface ButtonProps {
     children: React.ReactNode
-    type: 'button' | 'link' | 'external_link'
+    type: 'button' | 'link' | 'external_link' | 'submit'
     theme?: 'green_light' | 'green_ghost' | 'dark' | 'dark_blue'
     size?: 'big' | 'normal' | 'small'
     disabled?: boolean
@@ -35,6 +35,7 @@ export function Button({
                         styles[size],
                         className,
                     )}
+                    onClick={() => onClick?.()}
                 >
                     {children}
                 </Link>
@@ -52,6 +53,21 @@ export function Button({
                 >
                     {children}
                 </a>
+            )
+        case 'submit':
+            return (
+                <button
+                    className={clsx(
+                        styles.button,
+                        styles[theme],
+                        styles[size],
+                        className,
+                    )}
+                    type="submit"
+                    disabled={disabled}
+                >
+                    {children}
+                </button>
             )
         case 'button':
         default:
