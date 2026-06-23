@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Ícaro Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação frontend em React para divulgação e contratação de planos de hospedagem de servidores de jogos. O projeto combina uma landing page institucional com catálogo de servidores, página de preços e fluxo de cadastro com validação de formulário.
 
-Currently, two official plugins are available:
+## Sobre O Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Página inicial com apresentação do serviço, métricas e chamada para ação.
+- Página de servidores com catálogo de jogos disponíveis para hospedagem.
+- Página de preços com planos, recursos e perguntas frequentes.
+- Página de cadastro para contratar um plano.
+- Navegação feita com React Router.
+- Conteúdo alimentado por mocks locais para facilitar desenvolvimento e testes.
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- React Router
+- SCSS Modules
+- Yup para validação do formulário de cadastro
+- Vite Plugin SVGR
+- ESLint
 
-## Expanding the ESLint configuration
+## Pré-Requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js 24 ou superior.
+- npm instalado junto com o Node.js.
 
-```js
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
+## Instalação
 
-            // Remove tseslint.configs.recommended and replace with this
-            tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            tseslint.configs.stylisticTypeChecked,
+1. Clone o repositório e entre na pasta do projeto.
 
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
+    ```bash
+    git clone <URL_DO_REPOSITORIO>
+    cd frontend-self-server-gaming
+    ```
+
+2. Instale as dependências.
+
+    ```bash
+    npm install
+    ```
+
+## Como Executar
+
+Para iniciar o ambiente de desenvolvimento:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O Vite vai informar o endereço local da aplicação, normalmente em `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## Scripts Disponíveis
 
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
-```
+- `npm run dev`: inicia o servidor de desenvolvimento.
+- `npm run build`: gera a versão de produção e executa a checagem de tipos.
+- `npm run preview`: sobe uma prévia local do build gerado.
+- `npm run lint`: executa a análise estática com ESLint.
+
+## Estrutura Do Projeto
+
+- `src/App.tsx`: define as rotas da aplicação.
+- `src/layout`: layout base compartilhado entre as páginas.
+- `src/pages/home`: página inicial com hero, vantagens e banner.
+- `src/pages/services`: catálogo de servidores disponíveis.
+- `src/pages/prices`: página de planos, preços e FAQ.
+- `src/pages/register`: fluxo de cadastro com formulário e validação.
+- `src/components`: componentes reutilizáveis da interface.
+- `src/mocks`: dados simulados usados nas telas.
+
+## Rotas Principais
+
+- `/`: página inicial.
+- `/servers`: página de servidores.
+- `/prices`: página de preços.
+- `/register`: página de cadastro.
+- `*`: página de erro 404.
+
+## Observações
+
+O projeto usa estilos em SCSS Modules e dados mockados para manter o ambiente local simples e independente de backend. O formulário de cadastro também usa validação com Yup, o que ajuda a simular o fluxo de contratação antes da integração com uma API real.
